@@ -1,13 +1,10 @@
 # build stage
 FROM node:lts-alpine as build-stage
-RUN npm install -g @vue/cli@latest
-ARG NODE_ENV=development
-ENV NODE_ENV=${NODE_ENV}
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run docker-dev
 
 # production stage
 FROM nginx:stable-alpine as production-stage
