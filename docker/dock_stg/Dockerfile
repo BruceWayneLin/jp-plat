@@ -1,5 +1,6 @@
 # build stage
 FROM node:lts-alpine as build-stage
+RUN npm install -g @vue/cli@latest
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 WORKDIR /app
