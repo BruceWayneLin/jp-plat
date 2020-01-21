@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 COPY . .
-RUN npm run docker-prod
+RUN npm run build
 
 # production stage
 FROM nginx:stable-alpine as production-stage
