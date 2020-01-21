@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve --mode local",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && scp -r /Users/skandalin/desktop/platform/dist/* skanda@www-stg.fbk168.com:/home/skanda/web-data",
     "build-prod": "vue-cli-service build --mode production && scp -r /Users/skandalin/desktop/platform/dist/* skanda@www.fbk168.com:/home/skanda/web-data",
+    "build-dev": "vue-cli-service build --mode development",
     "docker-stg": "vue-cli-service build --mode development",
     "docker-prod": "vue-cli-service build --mode production"
   },
