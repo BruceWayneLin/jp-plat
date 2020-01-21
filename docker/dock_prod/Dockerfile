@@ -3,9 +3,8 @@ FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
-RUN npm install -g vue-cli@latest
 COPY . .
-RUN npm run build --production
+RUN npm run build
 
 # production stage
 FROM nginx:stable-alpine as production-stage
